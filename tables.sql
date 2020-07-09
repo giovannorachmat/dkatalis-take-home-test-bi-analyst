@@ -16,8 +16,8 @@ CREATE TABLE crm_events (
   ,client_id VARCHAR
 );
 
-/* COPY crm_call_center_logs FROM '/Users/giovannorachmat/Git (Personal)/dkatalis-take-home-test-bi-analyst/datasets/crm_call_center_logs.csv' CSV HEADER; */
-
+/* COPY crm_events FROM '/Users/giovannorachmat/Git (Personal)/dkatalis-take-home-test-bi-analyst/datasets/crm_events.csv' CSV HEADER; */
+/* 
 CREATE TABLE crm_call_center_logs (
   date_received DATE
   ,complaint_id VARCHAR
@@ -32,6 +32,6 @@ CREATE TABLE crm_call_center_logs (
   ,ser_start TIME
   ,ser_exit TIME
   ,ser_time TIME
-);
+); */
 
-/* COPY crm_events FROM '/Users/giovannorachmat/Git (Personal)/dkatalis-take-home-test-bi-analyst/datasets/crm_events.csv' CSV HEADER; */
+/* COPY crm_call_center_logs FROM '/Users/giovannorachmat/Git (Personal)/dkatalis-take-home-test-bi-analyst/datasets/crm_call_center_logs.csv' CSV HEADER; */
