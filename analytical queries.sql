@@ -1,10 +1,6 @@
 with raw_events as (
   select
-    date_received
-    ,product
-    ,issue
-    ,complaint_id
-    ,client_id
+    *
   from
     crm_events
 )
@@ -13,25 +9,27 @@ with raw_events as (
     date_received
     ,complaint_id
     ,priority
-    ,type
     ,outcome
-    ,server
     ,ser_time
+    ,ser_start
+    ,ser_exit
   from
     crm_call_center_logs
 )
 ,parse_all as (
   select
-    a.date_received
-    ,a.complaint_id
-    ,b.client_id
-    ,issue
+    a.*
+    ,case
+        when outcome is null then 'UNIDENTIFIED'
+        else outcome
+    end as outcome_tag
+    ,consumer_disputed
+    -- ,consumer_complaint_narrative
+    ,company_response_to_consumer
+    ,tags
     ,product
-    ,priority
-    ,type
-    ,outcome
-    ,server
-    ,ser_time
+    ,issue
+    ,client_id
   from
     raw_logs a
   left join
@@ -40,24 +38,14 @@ with raw_events as (
 )
 
 select
-  *
+    -- *
+    tags
+    -- ,round(avg(extract(epoch from ser_time)/60)::numeric,2) avg_response_time_minutes
+    ,sum(extract(epoch from ser_time)/60)
 from
   parse_all
-limit 10;
-
-/*
-select
-    date_trunc('month',date_received) as month
-    ,product
-    ,round(avg(ser_time),2) as avg_complaints
-    ,count(distinct complaint_id) as complaints
-    ,count(distinct client_id) as users
-    ,round(sum(complaints)/sum(users),2) as complaint_rate
-    ,round(avg(complaints),2) as avg_complaints
-    ,round(avg(users),2) as avg_users
-from
-    raw
 group by
-    1,2
+    1
 order by
-    1,2 */
+    2 desc,1
+-- limit 10;
