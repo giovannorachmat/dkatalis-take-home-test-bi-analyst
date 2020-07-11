@@ -11,4 +11,5 @@ How to open Task 1 & 3:
 In case task 2 does not run:
 * Open task_2_backup.py
 * Change [INSERT YOUR DEFAULT USERNAME HERE] into your default Mac/Windows account username
-* run in Terminal: python3 task_2_backup.py
+* run in Terminal:
+    $ python3 task_2_backup.py
