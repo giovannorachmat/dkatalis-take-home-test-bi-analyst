@@ -7,6 +7,3 @@ RUN git clone https://github.com/giovannorachmat/dkatalis-take-home-test-bi-anal
 RUN cd /dkatalis-take-home-test-bi-analyst/
 CMD [ "bash", "./task_1.pdf" ]
 CMD [ "bash", "./task_3.pdf" ]
-
-FROM python:latest
-CMD [ "python3", "./task_2.py" ]
