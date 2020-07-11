@@ -1,7 +1,12 @@
+FROM python:latest
+RUN pip install plotly
+RUN pip install dash
+RUN pip install pandas
+
 RUN git clone https://github.com/giovannorachmat/dkatalis-take-home-test-bi-analyst.git
 RUN cd /dkatalis-take-home-test-bi-analyst/
-RUN open ~/task_1.pdf
-RUN open ~/task_3.pdf
+CMD [ "bash", "./task_1.pdf" ]
+CMD [ "bash", "./task_3.pdf" ]
 
-FROM python:alpine
-RUN python task_2.py
+FROM python:latest
+CMD [ "python3", "./task_2.py" ]
