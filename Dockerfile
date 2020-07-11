@@ -1,5 +1,7 @@
-FROM postgres
-COPY *.sql /docker-entrypoint-initdb.d/
-ADD tables.sql /docker-entrypoint-initdb.d
-RUN chmod a+r /docker-entrypoint-initdb.d/*
-EXPOSE 5433
+RUN git clone https://github.com/giovannorachmat/dkatalis-take-home-test-bi-analyst.git
+RUN cd /dkatalis-take-home-test-bi-analyst/
+RUN open ~/task_1.pdf
+RUN open ~/task_3.pdf
+
+FROM python:alpine
+RUN python task_2.py
