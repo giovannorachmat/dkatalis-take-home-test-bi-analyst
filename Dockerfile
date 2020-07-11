@@ -5,6 +5,6 @@ RUN pip install pandas
 
 RUN git clone https://github.com/giovannorachmat/dkatalis-take-home-test-bi-analyst.git
 RUN cd /dkatalis-take-home-test-bi-analyst/
-CMD [ "bash", "./task_1.pdf" ]
-CMD [ "bash", "./task_3.pdf" ]
-CMD [ "python3", "./task_2.py" ]
+CMD [ "bash", "./dkatalis-take-home-test-bi-analyst/task_1.pdf" ]
+CMD [ "bash", "./dkatalis-take-home-test-bi-analyst/task_3.pdf" ]
+CMD [ "python3", "./dkatalis-take-home-test-bi-analyst/task_2.py" ]
