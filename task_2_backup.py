@@ -9,7 +9,9 @@ import plotly.graph_objects as go
 import pandas as pd
 
 # Exporting Data
-df_raw = pd.read_csv('/app/luxury_loan_portfolio.csv')
+your_username = '[INSERT YOUR DEFAULT USERNAME HERE]'
+git_clone_dir = 'dkatalis-take-home-test-bi-analyst'
+df_raw = pd.read_csv('/Users/{}/{}/luxury_loan_portfolio.csv'.format(your_username,git_clone_dir))
 app = dash.Dash(__name__)
 if __name__ == '__main__':
     app.run_server(debug=True)
