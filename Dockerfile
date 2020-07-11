@@ -7,4 +7,4 @@ RUN git clone https://github.com/giovannorachmat/dkatalis-take-home-test-bi-anal
 RUN cd /dkatalis-take-home-test-bi-analyst/
 CMD [ "bash", "./dkatalis-take-home-test-bi-analyst/task_1.pdf" ]
 CMD [ "bash", "./dkatalis-take-home-test-bi-analyst/task_3.pdf" ]
-CMD [ "python3", "./dkatalis-take-home-test-bi-analyst/task_2.py" ]
+CMD [ "python", "./dkatalis-take-home-test-bi-analyst/task_2.py" ]
