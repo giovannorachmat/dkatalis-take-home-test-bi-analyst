@@ -16,7 +16,6 @@ CREATE TABLE crm_events (
   ,client_id VARCHAR
 );
 
-
 CREATE TABLE crm_call_center_logs (
   date_received DATE
   ,complaint_id VARCHAR
